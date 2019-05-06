@@ -1,0 +1,77 @@
+<!--suppress ALL -->
+<html ng-app="chatAppLogin">
+<head>
+    <link rel="stylesheet" href="static/node_modules/bootstrap3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/components/login/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <link href="/static/node_modules/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" />
+</head>
+<body class="h-g" ng-controller="loginController">
+    <div class="modal-dialog m-t-10-p">
+        <div class="modal-content">
+            <div class="modal-heading">
+                <h3 class="text-center f-w-300">Register Here !</h3>
+            </div>
+            <hr />
+            <div class="modal-body">
+                <form role="form" method="post" action="">
+                    {% csrf_token %}
+                    <!--User Name-->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Username" ng-model="user.username" />
+                        </div>
+                    </div>
+                    <!--Full Name-->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Name" ng-model="user.name" />
+                        </div>
+                    </div>
+                    <!--Email-->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+                            <input type="email" class="form-control" placeholder="Email" ng-model="user.email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                            </span>
+                            <input type="password" class="form-control" placeholder="Password" ng-model="user.password"/>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="button" class="btn btn-success h-g" ng-click="registerUser(user)">Register</button>
+                    </div>
+                    <div class="text-center">
+                        <a href="/">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="static/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="static/node_modules/angular/angular.min.js"></script>
+    <script src="static/node_modules/bootstrap3/dist/js/bootstrap.min.js"></script>
+
+    <script src="/static/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="/static/node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/static/node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="/static/node_modules/angular-toastr/dist/angular-toastr.min.js"></script>
+    <script src="/static/node_modules/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script src="static/components/login/loginApp.js"></script>
+</body>
+</html>
