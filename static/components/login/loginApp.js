@@ -109,7 +109,7 @@ angular.module('chatAppLogin',[
         }
 
         console.log(user)
-//        $http.post('/api/login',user).then(success,failure)
+//        $http.post('/api-token-auth',user).then(success,failure)
 
     }
 
