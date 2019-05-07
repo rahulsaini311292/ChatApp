@@ -18,3 +18,7 @@ body{
 .modal-dialog {
     width: 350px!important;
 }
+
+.error_msg{
+    color:red
+}
