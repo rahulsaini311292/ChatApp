@@ -94,7 +94,7 @@ angular.module('chatAppLogin',[
     });
 })
 
-.controller('loginController',['$scope','$http','toastr','$cookies', function($scope,$http,toastr,$cookies){
+.controller('loginController',['$scope','$http','toastr','$cookies','$window', function($scope,$http,toastr,$cookies,$window){
 
     $scope.user = {}
 
@@ -102,14 +102,18 @@ angular.module('chatAppLogin',[
 
         var success = function(response){
             console.log(response)
+            $window.localStorage.setItem('jwt', response.data.token);
+            window.location.href="index"
         }
 
         var failure = function(error){
-            console.log(error)
+            console.log(error.data.non_field_errors[0])
+            var error_msg = error.data.non_field_errors[0]
+            toastr.error(error_msg)
         }
 
         console.log(user)
-//        $http.post('/api-token-auth',user).then(success,failure)
+        $http.post('/api-token-auth/',user).then(success,failure)
 
     }
 

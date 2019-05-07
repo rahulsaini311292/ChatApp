@@ -18,8 +18,8 @@ class UserAccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def get_by_natural_key(self, primary_phone):
-        return self.get(primary_phone=primary_phone)
+    def get_by_natural_key(self, email):
+        return self.get(email=email)
 
 
 # Create your models here.
